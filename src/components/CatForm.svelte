@@ -1,4 +1,5 @@
 <script>
+  import { link } from 'svelte-spa-router';
   import Cats from './Cats.svelte';
 
   let id;
@@ -24,8 +25,17 @@
 <div>
   <h2>The Famous Cats of YouTube</h2>
 
-  <input type="text" bind:value={id} placeholder="youtube id"> 
-  <input type="text" bind:value={name} placeholder="cat name">
-  <button on:click={addCat}>追加</button>
+  <p>
+    <a href="/" use:link>
+      HOME
+    </a>
+     >
+     Cats
+  </p>
+  <div>
+    <input type="text" bind:value={id} placeholder="youtube id"> 
+    <input type="text" bind:value={name} placeholder="cat name">
+    <button on:click={addCat}>Add cat</button>
+  </div>
   <Cats cats={cats} />
 </div>

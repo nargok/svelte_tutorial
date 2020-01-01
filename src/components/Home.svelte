@@ -1,5 +1,5 @@
 <script>
-  import { link } from 'svelte-spa-router';
+  import { push, link } from 'svelte-spa-router';
 	import Nested from './Nested.svelte';
 	import Numbers from './Numbers.svelte';
 	import Login from './Login.svelte';
@@ -44,6 +44,9 @@
         link to cat page
       </a>
     </p>
+    <button on:click={() => push('/cats')}>
+      Go cat page
+    </button>
   </div>
 </main>
 
